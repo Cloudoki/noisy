@@ -18,7 +18,7 @@ router.get('/find', function(req, res, next) {
 
   var text = req.query && req.query.name ? req.query.name : "";
 
-  myinstants.find(text, (err, body) => {
+  myinstants.find(text.split(/\W/)[0], (err, body) => {
 
     res.json(body);
   });
@@ -35,7 +35,7 @@ router.post('/find', function(req, res, next) {
 
   // if (token !== process.env.NOISY_TOKEN) return res.status(403).send();
 
-  myinstants.find(text, (err, body) => {
+  myinstants.find(text.split(/\W/)[0], (err, body) => {
 
     res.json(body);
   });
