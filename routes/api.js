@@ -25,7 +25,7 @@ router.get('/find', function(req, res, next) {
 
 router.post('/find', function(req, res, next) {
 
-  var text = req.body && req.query.text ? req.query.text : "";
+  var text = req.body && req.body.text ? req.body.text : "";
 
   myinstants.find(text, (err, body) => {
 
